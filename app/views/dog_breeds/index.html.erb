@@ -1,0 +1,47 @@
+<h1>Dog Breeds</h1>
+
+<%= form_with(url: dog_breeds_path, method: :get) do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Dog Breeds" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Breed Name</th>
+      <th>Sub Breeds</th>
+      <th>Dog Competition</th>
+      <th>Dog Ownership History</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dog_breeds.each do |dog_breed| %>
+      <tr>
+        <td><%= dog_breed.breed_name %></td>
+        <td>
+          <ul>
+            <% dog_breed.sub_breeds.each do |sub_breed| %>
+              <li><%= sub_breed.sub_breed_name %></li>
+            <% end %>
+          </ul>
+        </td>
+        <td>
+          <% latest_competition = DogCompetition.order(competition_date: :desc).first %>
+          <% if latest_competition %>
+            <%= "#{latest_competition.competition_name}, #{latest_competition.competition_date}" %>
+          <% else %>
+            No Dog Competitions Recorded
+          <% end %>
+        </td>
+        <td>
+          <% latest_ownership = DogOwnershipHistory.order(ownership_end_date: :desc).first %>
+          <% if latest_ownership %>
+          <%= "Owner: #{latest_ownership.owner_name}, Start Date: #{latest_ownership.ownership_start_date}, End Date: #{latest_ownership.ownership_end_date}" %>
+          <% else %>
+            No Dog Ownership History Recorded
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

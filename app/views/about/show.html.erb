@@ -1,0 +1,57 @@
+<h1>About Us</h1>
+
+<h2>Describe Datasets</h2>
+
+<h3>Data Source:</h3>
+  <p>1. GitHub API - Dog Breeds (<a href="https://dog.ceo/api/breeds/list/all">https://dog.ceo/api/breeds/list/all</a>)</p>
+  <p><strong>Description:</strong> This API provides information about various dog breeds and their sub-breeds.</p>
+
+<h3>Data Structure:</h3>
+  <p><strong>Dog Breed and Sub-breed tables.</strong></p>
+
+  <p>2. Faker Gem – Generated Data</p>
+  <p><strong>Description:</strong> Faker Gem is used to generate additional data related to dogs which includes dog competition and dog ownership history.</p>
+
+<h3>Data Structure:</h3>
+  <p><strong>Dog Competition and Dog Ownership History.</strong></p>
+
+<h2>Required Tables and Columns:</h2>
+
+  <ol>
+      <li>
+          <h3>Dog Breed</h3>
+          <p>This table stores information about different dog breeds.</p>
+          <ul>
+            <li>breed_id (integer) – Primary Key</li>
+            <li>breed_name (string)</li>
+          </ul>
+      </li>
+      <li>
+        <h3>Sub-breed</h3>
+        <p>This table lists the corresponding sub-breeds of the dogs.</p>
+        <ul>
+          <li>sub_breed_id (integer) – Primary Key</li>
+          <li>sub_breed_name (string)</li>
+          <li>breed_id (integer) – Foreign Key</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Dog Ownership History</h3>
+        <p>This table tracks the ownership history of dogs, including details such as history ID, owner name, start date, and end date.</p>
+        <ul>
+          <li>history_id (integer) – Primary Key</li>
+          <li>owner_name (string)</li>
+          <li>ownership_start_date (date)</li>
+          <li>ownership_end_date (date)</li>
+        </ul>
+      </li>
+      <li>
+        <h3>Dog Competition</h3>
+        <p>This table includes details about competitions, such as the name of the competition in which the dogs participated and dates of the competition.</p>
+        <ul>
+          <li>dog_competition_id (integer) – Primary Key</li>
+          <li>competition_name (string)</li>
+          <li>competition_date (date)</li>
+        </ul>
+      </li>
+  </ol>

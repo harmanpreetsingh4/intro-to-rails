@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_name: MyString
+  ownership_start_date: 2024-03-17
+  ownership_end_date: 2024-03-17
+
+two:
+  owner_name: MyString
+  ownership_start_date: 2024-03-17
+  ownership_end_date: 2024-03-17
