@@ -5,6 +5,14 @@
   <%= submit_tag "Search" %>
 <% end %>
 
+<ul>
+  <% @dog_breeds.each do |dog_breed| %>
+    <li>
+      <%= link_to dog_breed.breed_name, dog_breed %>
+    </li>
+  <% end %>
+</ul>
+
 <table>
   <thead>
     <tr>

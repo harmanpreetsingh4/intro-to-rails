@@ -1,0 +1,8 @@
+<h1><%= @dog_breed.breed_name %></h1>
+<p>Sub Breeds:</p>
+<ul>
+  <% @dog_breed.sub_breeds.each do |sub_breed| %>
+    <li><%= sub_breed.sub_breed_name %></li>
+  <% end %>
+</ul>
+
