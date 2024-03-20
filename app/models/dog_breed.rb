@@ -1,5 +1,5 @@
 class DogBreed < ApplicationRecord
   validates :breed_name, presence: true , uniqueness: true
 
-  has_many :sub_breeds #assoc
+  has_many :sub_breeds #asso
 end
